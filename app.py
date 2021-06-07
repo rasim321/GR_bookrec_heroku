@@ -39,7 +39,7 @@ def submit():
         number_rec = request.form['number_rec']
         print(book, number_rec)
 
-        if (book == '' or number_rec == ''):
+        if (len(book)<1 or len(number_rec) <0):
             return render_template('index.html',
              message='Please enter a book and number of recommendations')
         else:
