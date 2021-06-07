@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Recommender</title>
+    <!-- <link rel="stylesheet" href="https://unpkg.com/mvp.css"> -->
+    <link rel="stylesheet" href="..\static\styles.css">
+</head>
+<body>
+    <div class="container">
+        <img src="../static/books.jpg" alt="Books" class="logo">
+        {% if message %}
+            <p class="message">{{ message | safe }}</p>
+        {% endif %}
+        <form action="/submit" method="POST">
+            <div class="form-group">
+                <h3> Book Name:</h3>
+                <input
+                    type="text"
+                    name="name_book"
+                    placeholder="Name of Book"
+                />
+            </div>
+        
+            <div class="form-group">
+                <h3> Number of Recommendations:</h3>
+                <input
+                    type="number"
+                    name="number_rec"
+                    placeholder="Number of Recommendations"
+                />
+            </div>
+            <br>
+            <input type="submit" value="Submit" class="btn" />
+        </form>
+    </div>
+    <br>
+    
+</body>
+</html>
