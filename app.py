@@ -10,7 +10,7 @@ if ENV == 'dev':
     app.debug = True
     app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:pass@localhost/bookrec'
 else:
-    app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL')
+    app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL').replace('postgres', 'postgresql')
     app.debug = False
 
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
