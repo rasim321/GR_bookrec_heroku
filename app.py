@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request
 from flask_sqlalchemy import SQLAlchemy
+import os
 
 app = Flask(__name__)
 
@@ -9,7 +10,7 @@ if ENV == 'dev':
     app.debug = True
     app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:pass@localhost/bookrec'
 else:
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://psrxfetqnfyzcd:7bf7f5a66068eeb3051d2ca42a24e882213406a645f525358d0cbf88b0760613@ec2-52-86-25-51.compute-1.amazonaws.com:5432/d8fudds6evfn6'
+    app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL')
     app.debug = False
 
 app.config['SQLALCHEMU_TRACK_MODIFICATIONS'] = False
