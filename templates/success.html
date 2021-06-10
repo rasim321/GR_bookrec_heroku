@@ -5,13 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="../static/style.css" />
-    <title>Thank You!</title>
+    <title>Book Recs:</title>
   </head>
   <body>
     <div class="container">
-      <img src="../static/logo.png" alt="" class="logo" />
-      <h1>Thank You!</h1>
-      <h2>You will receive your recommendation in the email soon</h2>
+      <img src="../static/books2.jpg" alt="" class="logo" />
+      <h1>Book Recs:</h1>
+      <h2>Your recommendations are:</h2>
+      {% for res in results %}
+        <br>
+        <h2 class="recommendations">{{ res }}</h2>
+        <br>
+      {% endfor %}
     </div>
   </body>
 </html>
