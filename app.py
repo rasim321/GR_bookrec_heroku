@@ -58,9 +58,12 @@ def submit():
             # data = Feedback(book, number_rec)
             # db.session.add(data)
             # db.session.commit()
-
-            results = similar_books(book, book_df, int(number_rec), simsort)
-            print(results)
+            try:
+                results = similar_books(book, book_df, int(number_rec), simsort)
+                print(results)
+            except IndexError:
+                results = ["That book is not in the database but will be added soon!"]
+                print("That book is not in the database but will be added soon!")
 
             return render_template('success.html', results=results)
 

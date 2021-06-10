@@ -12,8 +12,9 @@ body {
     vertical-align: middle;
 }
 
-.recommendations {
+.container h2{
     
-    font-family: "Trebuchet MS", Verdana, sans-serif;
+    font-family: "sans-serif", Verdana, sans-serif;
+    text-align: center;
       
 }
