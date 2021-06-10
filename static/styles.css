@@ -11,3 +11,10 @@ body {
     display: table-cell;
     vertical-align: middle;
 }
+
+.container h2{
+    
+    font-family: "sans-serif", Verdana, sans-serif;
+    text-align: center;
+      
+}

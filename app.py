@@ -1,11 +1,17 @@
 from flask import Flask, render_template, request
 from flask_sqlalchemy import SQLAlchemy
 import os
+from models import similar_books
+import pandas as pd
+import numpy as np
 
+#Initiate app
 app = Flask(__name__)
 
-ENV = 'prod'
+#Select environment = "prod" or "dev"
+ENV = 'dev'
 
+#Route the app config according to prod or dev
 if ENV == 'dev':
     app.debug = True
     app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:pass@localhost/bookrec'
@@ -13,9 +19,15 @@ else:
     app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL').replace('postgres', 'postgresql')
     app.debug = False
 
+#Turn off track modification for sql_alchemy
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
+#Initiate databaase
 db = SQLAlchemy(app)
+
+#Get book dataframe and the similarity matrix
+book_df = pd.read_csv("data/books719.csv")
+simsort = np.load('data/simsort.npy')
 
 class Feedback(db.Model):
     __tablename__ = 'book_requests'
@@ -39,15 +51,21 @@ def submit():
         number_rec = request.form['number_rec']
         print(book, number_rec)
 
-        if (len(book)<1 or len(number_rec) <0):
+        if (len(book)<1 or len(number_rec)<0):
             return render_template('index.html',
              message='Please enter a book and number of recommendations')
         else:
-            data = Feedback(book, number_rec)
-            db.session.add(data)
-            db.session.commit()
+            # data = Feedback(book, number_rec)
+            # db.session.add(data)
+            # db.session.commit()
+            try:
+                results = similar_books(book, book_df, int(number_rec), simsort)
+                print(results)
+            except IndexError:
+                results = ["That book is not in the database but will be added soon!"]
+                print("That book is not in the database but will be added soon!")
 
-            return render_template('success.html')
+            return render_template('success.html', results=results)
 
 if __name__ == '__main__':
     
