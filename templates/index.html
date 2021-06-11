@@ -10,30 +10,38 @@
 </head>
 <body>
     <div class="container">
-        <img src="../static/books.jpg" alt="Books" class="logo">
+        <!-- <img src="../static/front.jpg" alt="Books" class="logo"> -->
         {% if message %}
             <p class="message">{{ message | safe }}</p>
         {% endif %}
         <form action="/submit" method="POST">
             <div class="form-group">
-                <h3> Book Game:</h3>
+                <div class="cont">
+                <h3 class="txt"> Book Name:</h3>
+                </div>
                 <input
                     type="text"
                     name="name_book"
                     placeholder="Name of Book"
+                    class="bookname"
                 />
             </div>
         
             <div class="form-group">
-                <h3> Number of Recommendations:</h3>
+                <div class="cont2">
+                <h3 class="txt2"> Number of Recommendations:</h3>
+                </div>
                 <input
                     type="number"
                     name="number_rec"
                     placeholder="Number of Recommendations"
+                    class="recommendations"
                 />
             </div>
             <br>
+            <div class="submit-button">
             <input type="submit" value="Submit" class="btn" />
+        </div>
         </form>
     </div>
     <br>
