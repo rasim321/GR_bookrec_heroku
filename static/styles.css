@@ -10,11 +10,114 @@ html {
 body {
     display: table-cell;
     vertical-align: middle;
+    background-image:url(../static/front.jpg);
+    -webkit-background-size:cover;
+    background-size:cover;
+    background-position: center center;
+    position: relative;
 }
 
+.container{
+    max-width: 38em;
+    padding: 1em 3em 2em 3em;
+    margin: 0em auto;
+    background: transparent;
+
+}
+
+.bookname{
+    width: 500px;
+    height: 30px;
+    border-color: beige;
+    border-radius: 5px;
+    box-shadow: 0px 3px 10px -2px rgba(0, 0, 0, 0.2);
+}
+
+.recommendations{
+    width: 500px;
+    height: 30px;
+    border-color: beige;
+    border-radius: 5px;
+    box-shadow: 0px 3px 10px -2px rgba(0, 0, 0, 0.2);
+    
+}
+
+.cont{
+    background-position: center;
+    box-sizing: border-box;
+    background-size: cover;
+    background-color: rgb(212, 87, 87);
+    text-align: center;
+    margin: auto;
+    width: 40%;
+    background-position: center;
+    box-shadow: 20px 13px 10px -2px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+}
+
+.cont2{
+    background-position: center;
+    box-sizing: border-box;
+    background-size: cover;
+    background-color: rgb(212, 87, 87);
+    text-align: center;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    margin: auto;
+    background-position: center;
+    position: relative;
+    box-shadow:  20px 13px 10px -2px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+}
+
+.txt{
+    font-size: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+}
+
+.txt2{
+    font-size: 20px;
+    font-family:  'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+    white-space: nowrap;
+    
+}
+
+.container img{
+    width: 80%;
+    height: 80vh;
+}
 .container h2{
     
     font-family: "sans-serif", Verdana, sans-serif;
     text-align: center;
       
+}
+
+.submit-button{
+    text-align: center;
+    
+}
+
+.btn{
+    width: 200px;
+    height: 40px;
+    color: black;
+    box-shadow: 0px 3px 10px -2px rgba(0, 0, 0, 0.2);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border-radius: 20px;
+    background-color: rgb(248, 248, 240);
+}
+
+.btn:hover{
+    background-color: rgb(74, 198, 247);
+    color: white;
+}
+
+.message{
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-shadow: 0px 3px 10px -2px rgba(0, 0, 0, 0.2);
 }
