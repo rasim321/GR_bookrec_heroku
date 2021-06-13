@@ -1,9 +1,10 @@
 from flask import Flask, render_template, request
 from flask_sqlalchemy import SQLAlchemy
 import os
-from models import similar_books
+from models import BookLinks, similar_books
 import pandas as pd
 import numpy as np
+from googlesearch import search
 
 #Initiate app
 app = Flask(__name__)
@@ -59,11 +60,12 @@ def submit():
             # db.session.add(data)
             # db.session.commit()
             try:
-                results = similar_books(book, book_df, int(number_rec), simsort)
+                title = BookLinks([book])
+                results = similar_books(title, book_df, int(number_rec), simsort)
                 print(results)
             except IndexError:
                 results = ["That book is not in the database but will be added soon!"]
-                print("That book is not in the database but will be added soon!")
+               
 
             return render_template('success.html', results=results)
 
