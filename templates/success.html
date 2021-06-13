@@ -5,13 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="../static/style.css" />
-    <title>Thank You!</title>
+    <title>Book Recs:</title>
   </head>
   <body>
+    
     <div class="container">
-      <img src="../static/logo.png" alt="" class="logo" />
-      <h1>Thank You!</h1>
-      <h2>You will receive your recommendation in the email soon</h2>
+      <img src="../static/books2.jpg" alt="" class="logo" />
+      <h2 class="recommendations">Your recommendations are:</h2>
+      {% for key,value in results.iterrows() %}
+      <br>
+      <h3>Title:</h2>
+      <option value="{{ value['title'] }}">{{ value['title'] }}</option>
+      <h3>Author:</h2>
+      <option value="{{ value['author'] }}">{{ value['author'] }}</option>
+      <h3>GoodReads Rating:</h2>
+      <option value="{{ value['avg_rate'] }}">{{ value['avg_rate'] }}</option>
+      <h3>Plot Summary:</h2>
+      <option value="{{ value['plot_summary'] }}">{{ value['plot_summary'] }}</option>
+      <br>
+      {% endfor %}
+    </div>
+    <div class="return">
+      <form action="/" class="inline">
+        <button onclick="location.href = '/index.html';" id="homebutton" class="float-left submit-button" >Search another book</button>
+      </form>
     </div>
   </body>
 </html>
