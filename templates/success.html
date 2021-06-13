@@ -8,6 +8,7 @@
     <title>Book Recs:</title>
   </head>
   <body>
+    
     <div class="container">
       <div class="recbox">
           <h2 class="recom">Recommendations:</h2>
@@ -16,6 +17,11 @@
         <h2 class="recommendations">{{ res }}</h2>
         <br>
       {% endfor %} 
+    </div>
+    <div class="return">
+      <form action="/" class="inline">
+        <button onclick="location.href = '/index.html';" id="homebutton" class="float-left submit-button" >Search another book</button>
+      </form>
     </div>
   </body>
 </html>
