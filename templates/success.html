@@ -14,13 +14,13 @@
       <h2 class="recommendations">Your recommendations are:</h2>
       {% for key,value in results.iterrows() %}
       <br>
-      <h3>Title:</h2>
+      <h3>Title:</h3>
       <option value="{{ value['title'] }}">{{ value['title'] }}</option>
-      <h3>Author:</h2>
+      <h3>Author:</h3>
       <option value="{{ value['author'] }}">{{ value['author'] }}</option>
-      <h3>GoodReads Rating:</h2>
+      <h3>GoodReads Rating:</h3>
       <option value="{{ value['avg_rate'] }}">{{ value['avg_rate'] }}</option>
-      <h3>Plot Summary:</h2>
+      <h3>Plot Summary:</h3>
       <option value="{{ value['plot_summary'] }}">{{ value['plot_summary'] }}</option>
       <br>
       {% endfor %}
