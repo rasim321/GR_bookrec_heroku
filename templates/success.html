@@ -12,10 +12,17 @@
     <div class="container">
       <img src="../static/books2.jpg" alt="" class="logo" />
       <h2 class="recommendations">Your recommendations are:</h2>
-      {% for res in results %}
-        <br>
-        <h2 class="recommendations">{{ res }}</h2>
-        <br>
+      {% for key,value in results.iterrows() %}
+      <br>
+      <h3>Title:</h2>
+      <option value="{{ value['title'] }}">{{ value['title'] }}</option>
+      <h3>Author:</h2>
+      <option value="{{ value['author'] }}">{{ value['author'] }}</option>
+      <h3>GoodReads Rating:</h2>
+      <option value="{{ value['avg_rate'] }}">{{ value['avg_rate'] }}</option>
+      <h3>Plot Summary:</h2>
+      <option value="{{ value['plot_summary'] }}">{{ value['plot_summary'] }}</option>
+      <br>
       {% endfor %}
     </div>
     <div class="return">
