@@ -56,18 +56,19 @@ def submit():
             return render_template('index.html',
              message='Please enter a book and number of recommendations')
         else:
-            # data = Feedback(book, number_rec)
-            # db.session.add(data)
-            # db.session.commit()
             try:
                 title = BookLinks([book])
                 results = similar_books(title, book_df, int(number_rec), simsort)
                 print(results)
-            except IndexError:
-                results = ["That book is not in the database but will be added soon!"]
-               
+                return render_template('success.html', results=results)
 
-            return render_template('success.html', results=results)
+            except:
+                data = Feedback(book, number_rec)
+                db.session.add(data)
+                db.session.commit()
+
+                return render_template('index.html',
+                message='This book is not in our database yet, but will be added soon! Please try another book.')
 
 if __name__ == '__main__':
     
