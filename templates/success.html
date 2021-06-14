@@ -4,31 +4,44 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" href="../static/style.css" />
+    <link rel="stylesheet" href="../static/success.css" />
     <title>Book Recs:</title>
   </head>
   <body>
-    
-    <div class="container">
-      <img src="../static/books2.jpg" alt="" class="logo" />
-      <h2 class="recommendations">Your recommendations are:</h2>
-      {% for key,value in results.iterrows() %}
-      <br>
-      <h3>Title:</h3>
-      <option value="{{ value['title'] }}">{{ value['title'] }}</option>
-      <h3>Author:</h3>
-      <option value="{{ value['author'] }}">{{ value['author'] }}</option>
-      <h3>GoodReads Rating:</h3>
-      <option value="{{ value['avg_rate'] }}">{{ value['avg_rate'] }}</option>
-      <h3>Plot Summary:</h3>
-      <option value="{{ value['plot_summary'] }}">{{ value['plot_summary'] }}</option>
-      <br>
-      {% endfor %}
-    </div>
+  <div class="container">
+
     <div class="return">
       <form action="/" class="inline">
-        <button onclick="location.href = '/index.html';" id="homebutton" class="float-left submit-button" >Search another book</button>
+        <button class="btn" onclick="location.href = '/index.html';" id="homebutton" class="float-left submit-button" >Search another book</button>
       </form>
     </div>
+
+      <div class="recbox">
+        <div class="recom">
+          <h2>Recommendations:</h2>
+        </div>
+
+      <h2 class="recommendations">Your recommendations are:</h2>
+      <div class="content-box">
+      {% for key,value in results.iterrows() %}
+      <div class="sep-box">
+      <br>
+
+      <h3 class="content">Title:</h3>
+      <option class="content2" value="{{ value['title'] }}">{{ value['title'] }}</option>
+      <h3 class="content">Author:</h3>
+      <option class="content2" value="{{ value['author'] }}">{{ value['author'] }}</option>
+      <h3 class="content">GoodReads Rating:</h3>
+      <option class="content2" value="{{ value['avg_rate'] }}">{{ value['avg_rate'] }}</option>
+      <h3 class="content">Plot Summary:</h3>
+      <option class="content2" value="{{ value['plot_summary'] }}">{{ value['plot_summary'] }}</option>
+      <br>
+      </div> 
+      {% endfor %}
+
+    </div>
+    </div>
+  </div>
+
   </body>
 </html>
