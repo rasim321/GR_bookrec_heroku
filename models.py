@@ -5,6 +5,9 @@ from time import time
 import pandas as pd
 
 book_df = pd.read_csv('data/books719.csv')
+import numpy as np
+simsort = np.load('data/simsort.npy')
+
 
 def similar_books(title, df, num_books, sorted_list):
   """
@@ -18,7 +21,8 @@ def similar_books(title, df, num_books, sorted_list):
   """
 
   idx_num = df[df["title"] == title].index.values
-  return df["title"][sorted_list[idx_num][0][-2:-(num_books+2):-1]].values
+  titles = df["title"][sorted_list[idx_num][0][-2:-(num_books+2):-1]].values
+  return book_df.loc[book_df["title"].isin(titles),["title", "author", "avg_rate", "plot_summary"]]
 
 def BookLinks(query):
   """
@@ -175,5 +179,5 @@ def BookDetails(links, title_data=False, author_data=False, ratings_data = False
   return book_df
 
 if __name__ == "__main__":
-  print(BookLinks(["Harry Potter and the Sorcerer's Stone"]))
+  print(similar_books("Great Expectations", book_df, 3, simsort))
   

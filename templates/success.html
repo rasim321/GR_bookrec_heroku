@@ -9,6 +9,7 @@
   </head>
   <body>
   <div class="container">
+
     <div class="return">
       <form action="/" class="inline">
         <button class="btn" onclick="location.href = '/index.html';" id="homebutton" class="float-left submit-button" >Search another book</button>
@@ -16,13 +17,31 @@
     </div>
 
       <div class="recbox">
-          <h2 class="recom">Recommendations:</h2>
-      {% for res in results %}
-        <br>
-        <h2 class="recommendations">{{ res }}</h2>
-        <br>
-      {% endfor %} 
+        <div class="recom">
+          <h2>Recommendations:</h2>
+        </div>
+
+      <h2 class="recommendations">Your recommendations are:</h2>
+      <div class="content-box">
+      {% for key,value in results.iterrows() %}
+      <div class="sep-box">
+      <br>
+
+      <h3 class="content">Title:</h3>
+      <option class="content2" value="{{ value['title'] }}">{{ value['title'] }}</option>
+      <h3 class="content">Author:</h3>
+      <option class="content2" value="{{ value['author'] }}">{{ value['author'] }}</option>
+      <h3 class="content">GoodReads Rating:</h3>
+      <option class="content2" value="{{ value['avg_rate'] }}">{{ value['avg_rate'] }}</option>
+      <h3 class="content">Plot Summary:</h3>
+      <option class="content2" value="{{ value['plot_summary'] }}">{{ value['plot_summary'] }}</option>
+      <br>
+      </div> 
+      {% endfor %}
+
     </div>
+    </div>
+  </div>
 
   </body>
 </html>
