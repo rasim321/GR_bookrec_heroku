@@ -5,6 +5,7 @@ from models import BookLinks, similar_books
 import pandas as pd
 import numpy as np
 from googlesearch import search
+from sqlalchemy import exc
 
 #Initiate app
 app = Flask(__name__)
@@ -63,12 +64,17 @@ def submit():
                 return render_template('success.html', results=results)
 
             except:
-                data = Feedback(book, number_rec)
-                db.session.add(data)
-                db.session.commit()
+                try: 
+                    data = Feedback(book, number_rec)
+                    db.session.add(data)
+                    db.session.commit()
 
-                return render_template('index.html',
-                message='This book is not in our database yet, but will be added soon! Please try another book.')
+                    return render_template('index.html',
+                    message='This book is not in our database yet, but will be added soon! Please try another book.')
+                except exc.IntegrityError:
+                    db.session.rollback()
+                    return render_template('index.html',
+                    message='This book is not in our database yet, but will be added soon! Please try another book.')
 
 if __name__ == '__main__':
     
