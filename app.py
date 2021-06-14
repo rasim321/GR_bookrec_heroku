@@ -65,6 +65,7 @@ def submit():
 
             except:
                 try: 
+                    print("trying")
                     data = Feedback(book, number_rec)
                     db.session.add(data)
                     db.session.commit()
@@ -72,6 +73,7 @@ def submit():
                     return render_template('index.html',
                     message='This book is not in our database yet, but will be added soon! Please try another book.')
                 except exc.IntegrityError:
+                    print("exception occurred")
                     # db.session.rollback()
                     return render_template('index.html',
                     message='This book is not in our database yet, but will be added soon! Please try another book.')
