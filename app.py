@@ -14,7 +14,7 @@ app = Flask(__name__)
 ENV = 'dev'
 
 #Route the app config according to prod or dev
-if ENV == 'dev':
+if ENV == 'prod':
     app.debug = True
     app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:pass@localhost/bookrec'
 else:
@@ -74,7 +74,7 @@ def submit():
                     message='This book is not in our database yet, but will be added soon! Please try another book.')
                 except exc.IntegrityError:
                     print("exception occurred")
-                    # db.session.rollback()
+                    db.session.rollback()
                     return render_template('index.html',
                     message='This book is not in our database yet, but will be added soon! Please try another book.')
 
