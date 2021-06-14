@@ -11,9 +11,7 @@
 <body>
     <div class="container">
         <!-- <img src="../static/front.jpg" alt="Books" class="logo"> -->
-        {% if message %}
-            <p class="message">{{ message | safe }}</p>
-        {% endif %}
+
         <form action="/submit" method="POST">
             <div class="form-group">
                 <div class="cont">
@@ -42,7 +40,15 @@
             <div class="submit-button">
             <input type="submit" value="Submit" class="btn" />
         </div>
+
         </form>
+
+    </div>
+
+    <div class="msg">
+    {% if message %}
+    <p class="message">{{ message | safe }}</p>
+    {% endif %}
     </div>
     <br>
     
