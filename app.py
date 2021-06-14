@@ -72,7 +72,7 @@ def submit():
                     return render_template('index.html',
                     message='This book is not in our database yet, but will be added soon! Please try another book.')
                 except exc.IntegrityError:
-                    db.session.rollback()
+                    # db.session.rollback()
                     return render_template('index.html',
                     message='This book is not in our database yet, but will be added soon! Please try another book.')
 
