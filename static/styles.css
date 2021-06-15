@@ -18,7 +18,7 @@ body {
 }
 
 .msg{
-    width: 40%;
+    width: 60%;
     margin: auto;
 }
 
@@ -166,70 +166,8 @@ body {
     }
 
     .msg{
-        width: 80%;
+        width: 60%;
         margin: auto;
     }
-    
-
-}
-
-@media(max-width: 900px){
-    
-    
-    body {
-        display: flex;
-        vertical-align: middle;
-        background-image:url(../static/front.jpg);
-        -webkit-background-size:cover;
-        background-size:cover;
-        background-position: center center;
-        position: relative;
-        flex-direction: column;
-        margin: auto;
-
-    }
-    
-    .container{
-        text-align: center;
-        margin: auto;
-    }
-
-    .msg{
-        width: 80%;
-        margin: auto;
-    }
-    
-
-}
-
-@media(max-width: 1500px){
-    
-    body {
-        display: flex;
-        vertical-align: middle;
-        background-image:url(../static/front.jpg);
-        -webkit-background-size:cover;
-        background-size:cover;
-        background-position: center center;
-        position: relative;
-        flex-direction: column;
-        padding-top: 250px;
-        margin: auto;
-
-    }
-    
-    .container{
-        text-align: center;
-        margin: auto;
-    }
-
-
-    .msg{
-        width: 80%;
-        margin: auto;
-    }
-
-    
-    
 
 }
