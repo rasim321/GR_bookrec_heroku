@@ -86,3 +86,19 @@
     background-color: transparent;
     background-color: white;
 }
+
+@media(max-width: 700px){
+    body {
+        background-image:url(../static/front.jpg);
+        -webkit-background-size:cover;
+        background-size:cover;
+        background-position: center center;
+        position: relative;
+        flex-direction: column;
+        margin: auto;
+    }
+
+    .return{
+        padding-left: 120px;
+    }
+}
