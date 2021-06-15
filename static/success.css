@@ -6,6 +6,7 @@ html, body {
 .container{
     background-image: url(../static/libraryback.jpg);
     width: 100%;
+
     box-sizing: border-box;
     background-size:inherit;
     background-position: center center;
