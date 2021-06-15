@@ -185,11 +185,13 @@ body {
         background-position: center center;
         position: relative;
         flex-direction: column;
+        margin: auto;
 
     }
     
     .container{
         text-align: center;
+        margin: auto;
     }
 
     .msg{
@@ -212,12 +214,13 @@ body {
         position: relative;
         flex-direction: column;
         padding-top: 250px;
+        margin: auto;
 
     }
     
     .container{
         text-align: center;
-        margin-top: 700px;
+        margin: auto;
     }
 
 
