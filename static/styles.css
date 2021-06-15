@@ -172,3 +172,61 @@ body {
     
 
 }
+
+@media(max-width: 900px){
+    
+    
+    body {
+        display: flex;
+        vertical-align: middle;
+        background-image:url(../static/front.jpg);
+        -webkit-background-size:cover;
+        background-size:cover;
+        background-position: center center;
+        position: relative;
+        flex-direction: column;
+
+    }
+    
+    .container{
+        text-align: center;
+    }
+
+    .msg{
+        width: 80%;
+        margin: auto;
+    }
+    
+
+}
+
+@media(max-width: 1500px){
+    
+    body {
+        display: flex;
+        vertical-align: middle;
+        background-image:url(../static/front.jpg);
+        -webkit-background-size:cover;
+        background-size:cover;
+        background-position: center center;
+        position: relative;
+        flex-direction: column;
+        padding-top: 250px;
+
+    }
+    
+    .container{
+        text-align: center;
+        margin-top: 700px;
+    }
+
+
+    .msg{
+        width: 80%;
+        margin: auto;
+    }
+
+    
+    
+
+}
