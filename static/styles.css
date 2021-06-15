@@ -1,10 +1,10 @@
 html, body {
     height: 100%;
+    width: 100%;
 }
 
 html {
     display: table;
-    margin: auto;
 }
 
 body {
@@ -17,17 +17,21 @@ body {
     position: relative;
 }
 
-body msg{
-    padding-left: 50px;
+.msg{
+    width: 40%;
+    margin: auto;
 }
+
 
 .container{
     max-width: 38em;
     padding: 1em 3em 2em 3em;
     margin: 0em auto;
     background: transparent;
+}
 
-
+.form-group{
+    text-align: center;
 }
 
 .bookname{
@@ -46,6 +50,7 @@ body msg{
     box-shadow: 0px 3px 10px -2px rgba(0, 0, 0, 0.2);
     
 }
+
 
 .cont{
     background-position: center;
@@ -143,7 +148,7 @@ body msg{
 
 @media(max-width: 700px){
     body {
-        display: table-cell;
+        display: flex;
         vertical-align: middle;
         background-image:url(../static/front.jpg);
         -webkit-background-size:cover;
@@ -153,6 +158,17 @@ body msg{
         flex-direction: column;
         margin: auto;
         padding-top: 250px;
+
     }
+    
+    .container{
+        text-align: center;
+    }
+
+    .msg{
+        width: 80%;
+        margin: auto;
+    }
+    
 
 }
