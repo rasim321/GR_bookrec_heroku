@@ -140,3 +140,19 @@ body msg{
     content: "\a";
     white-space: normal;
 }
+
+@media(max-width: 700px){
+    body {
+        display: table-cell;
+        vertical-align: middle;
+        background-image:url(../static/front.jpg);
+        -webkit-background-size:cover;
+        background-size:cover;
+        background-position: center center;
+        position: relative;
+        flex-direction: column;
+        margin: auto;
+        padding-top: 250px;
+    }
+
+}
