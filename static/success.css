@@ -10,8 +10,6 @@ html, body {
     background-size:inherit;
     background-position: center center;
     text-align: center;
-    max-width: 1200px;
-
 }
 
 .recom{
@@ -92,26 +90,6 @@ html, body {
     background-color: white;
 }
 
-@media(max-width: 900px){
-    body {
-        background-image:url(../static/front.jpg);
-        -webkit-background-size:cover;
-        background-size:cover;
-        background-position: center center;
-        position: relative;
-        flex-direction: column;
-        margin: auto;
-    }
-
-    .container{
-        text-align: center;
-    }
-
-    .return{
-       margin-left: 100px;
-    }
-}
-
 @media(max-width: 700px){
     body {
         background-image:url(../static/front.jpg);
@@ -121,15 +99,35 @@ html, body {
         position: relative;
         flex-direction: column;
         margin: auto;
-        width: auto;
     }
 
     .container{
         text-align: center;
     }
 
+    @media screen and (-webkit-min-device-pixel-ratio:0) {
+        select,
+        textarea,
+        input {
+          font-size: 16px;
+        }
+      }
+
+      @media screen and (-webkit-min-device-pixel-ratio:0) {
+        select:focus,
+        textarea:focus,
+        input:focus {
+          font-size: 16px;
+        }
+      }
+
+    [class*="col-"] {
+        width: 100%;
+      }
+
     .return{
        margin-left: 100px;
     }
 }
+
 
