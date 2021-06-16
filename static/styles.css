@@ -15,6 +15,7 @@ body {
     background-size:cover;
     background-position: center center;
     position: relative;
+    max-width: 1200px;
 }
 .msg{
     width: 40%;
@@ -145,18 +146,18 @@ body {
     white-space: normal;
 }
 
-@media(max-width: 1200px){
+@media(max-width: 700px){
+    
     body {
-        display: flex;
-        vertical-align: middle;
         background-image:url(../static/front.jpg);
         -webkit-background-size:cover;
         background-size:cover;
         background-position: center center;
         position: relative;
         flex-direction: column;
-        margin: auto;
-        padding-top: 250px;
+        margin: 0;
+        padding-top: 150px;
+        width: 70%;
 
     }
     
@@ -168,5 +169,9 @@ body {
         width: 80%;
         margin: auto;
     }
+
+    [class*="col-"] {
+        width: 100%;
+      }
 
 }
