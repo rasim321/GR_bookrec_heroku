@@ -150,7 +150,7 @@ body {
     
     body {
         display: flex;
-        background-image:url(../static/front.jpg);
+        background-image:url(../static/background.jpg);
         vertical-align: middle;
         -webkit-background-size:cover;
         background-size:cover;
