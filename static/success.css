@@ -105,6 +105,14 @@ html, body {
         text-align: center;
     }
 
+    .sep-box{
+        border: 0.5px solid black;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        background-color: transparent;
+        background-color: white;
+    }
+
     @media screen and (-webkit-min-device-pixel-ratio:0) {
         select,
         textarea,
