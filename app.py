@@ -11,10 +11,10 @@ from sqlalchemy import exc
 app = Flask(__name__)
 
 #Select environment = "prod" or "dev"
-ENV = 'dev'
+ENV = 'prod'
 
 #Route the app config according to prod or dev
-if ENV == 'prod':
+if ENV == 'dev':
     app.debug = True
     app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:pass@localhost/bookrec'
 else:
@@ -71,6 +71,7 @@ def submit():
 
                     return render_template('index.html',
                     message='This book is not in our database yet, but will be added soon! Please try another book.')
+
                 except exc.IntegrityError:
                     db.session.rollback()
                     return render_template('index.html',
