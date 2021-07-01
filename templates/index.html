@@ -8,8 +8,32 @@
     <!-- <link rel="stylesheet" href="https://unpkg.com/mvp.css"> -->
     <link rel="stylesheet" href="..\static\styles.css">
 </head>
+
 <body>
+
+
+    <div class="about">
+        <input type="checkbox" id="toggle">
+    <label for="toggle">About</label>
+    
+    <dialog class="aboutmsg" >
+      <p>   
+        
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa nihil dolore similique quis qui ad blanditiis ex eum! Enim maiores ipsam fugiat officiis earum distinctio natus reprehenderit aliquam est iusto!
+      
+      </p>
+        
+      
+      <label for="toggle">Close</label>
+    </dialog>
+    
+    </div>
+    
+        
+
     <div class="container">
+        
+
         <!-- <img src="../static/front.jpg" alt="Books" class="logo"> -->
 
         <form action="/submit" method="POST">
@@ -45,12 +69,13 @@
 
     </div>
 
-    <div class="msg">
+  <div class="msg">
     {% if message %}
     <p class="message">{{ message | safe }}</p>
     {% endif %}
     </div>
     <br>
-    
+
 </body>
+
 </html>
